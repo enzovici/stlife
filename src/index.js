@@ -10,7 +10,7 @@ import Comments from './api/comments'
 import testAPI from './api/_test'
 import catchAll from './utils/catch_all'
 
-testAPI()// test api
+//testAPI()// test api
 
 const store = configureStore()
 console.log('store log', store)

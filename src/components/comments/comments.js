@@ -2,17 +2,16 @@ import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 
-class Newsfeed extends React.Component {
+class Comments extends React.Component {
   constructor (props, context) {
     super(props, context)
 
-    this.feedList = this.feedList.bind(this)
-    this.getPostComments = this.getPostComments.bind(this)
+    this.commentList = this.commentList.bind(this);
+
   }
 
-  feedList(news) {
+  commentList(news) {
     let rows = []
-    let comments = this.props.newsfeed.comments
     news.forEach((item, _) => {
       let news= (
         <div className='container' id='news'>
@@ -40,18 +39,12 @@ class Newsfeed extends React.Component {
       return rows
     }
 
-    getPostComments() {
-      comments = this.props.newsfeed.comments
-      return comments
-        }
-
   render () {
   let newsfeedItems = this.props.newsfeed
   console.log(newsfeedItems)
-  console.log(this.getPostComments())
     return (
       <div>
-             <h3>Newsfeed</h3>
+             <h3>Comments</h3>
              <table>
                <thead>
                  <tr>
@@ -59,7 +52,7 @@ class Newsfeed extends React.Component {
                  </tr>
                </thead>
                <tbody>
-            {this.feedList(newsfeedItems)}
+            {this.commentList(newsfeedItems)}
                </tbody>
              </table>
            </div>
@@ -69,9 +62,8 @@ class Newsfeed extends React.Component {
 
 function mapStateToProps (state, ownprops) {
   return {
-    newsfeed: state.mainStore.newsfeed,
-    comments: state.mainStore.comments
+    newsfeed: state.mainStore.comments
   }
 }
 
-export default connect(mapStateToProps)(Newsfeed)
+export default connect(mapStateToProps)(Comments)

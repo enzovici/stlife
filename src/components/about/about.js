@@ -3,17 +3,17 @@ import { connect } from 'react-redux'
 
 class About extends React.Component {
   render() {
-    // let id = this.props.params.id
-    // let invoices = this.props.mainStore.invoices
-    // let invoice = _(invoices).find((inv) => {
-    //   return inv.id == id
-    // })
+
     return (
       <div>
-        I'm About
-      </div>
-    )
-  }
+        <h6><p>This assesment has been realized with REACT and REDUX following the FLUX pattern.
+          Webpack bundler, Babel transpiler and MOCHA test suite.</p>
+        <p>Read the <a href='https://github.com/enzovici/streetlife-assesment.git'>repository README </a>
+        for more informations.</p>
+    </h6>
+  </div>
+)
+}
 }
 
 
