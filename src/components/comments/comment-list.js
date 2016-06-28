@@ -8,16 +8,6 @@ class CommentList extends React.Component {
     super(props, context)
 
     this.commentList = this.commentList.bind(this)
-    this.getCommmentMarkup = this.getCommmentMarkup.bind(this)
-  }
-
-  getCommmentMarkup(id){
-    let item = _.where (this.props.comments, {relative_id: id})
-    console.log(item)
-    if (item[0].body)
-      return item[0].body
-    else
-      return 'no comments'
   }
 
   commentList(comments) {
@@ -29,7 +19,7 @@ class CommentList extends React.Component {
           <td><img src={item.author.avatar}></img> </td>
           <td>
             <p><strong>{item.author.display_name}</strong></p>
-            <p className='comment-body' dangerouslySetInnerHTML={{__html: this.getCommmentMarkup(item.relative_id)}}></p>
+            <p className='comment-body' dangerouslySetInnerHTML={{__html: item.body}}></p>
             <p>{new Date(item.posted_at).toUTCString()}</p>
           </td>
         </tr>
@@ -40,7 +30,6 @@ class CommentList extends React.Component {
   }
 
   render () {
-    let comments = this.props.comments
     return (
       <td> {this.commentList(this.props.ids)} </td>
 

@@ -13,5 +13,5 @@ export default class About extends React.Component {
       <p>The app could be better componentized, all components are stateful (containers) due to the short time I had. </p>
     </h6>
   </div>
-  ) }
+) }
 }
