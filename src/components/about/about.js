@@ -11,6 +11,7 @@ export default class About extends React.Component {
         <p>Read the <a href='https://github.com/enzovici/streetlife-assesment.git'>repository README </a>
         for more informations.</p>
       <p>The app could be better componentized, all components are stateful (containers) due to the short time I had. </p>
+      <p>For the same reason, the style is just layout adjustament in order to ehnance readability. </p>
     </h6>
   </div>
 ) }

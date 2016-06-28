@@ -24,32 +24,28 @@ class Newsfeed extends React.Component {
 
   feedList(news) {
     let rows = []
-    news.forEach((item, _) => {
+    news.forEach((item) => {
       let news= (
-
-        <tr key={`item_rec_${item.id}`}>
-          <td>
-            <img className='avatar' src={item.author.avatar}></img><p className='author-name'>{item.author.display_name}</p>
-            <td className='votes'>
-              <img src='/img/up.svg'></img>{item.upvotes}
-                <img src='img/down.svg'></img>{item.downvotes}
-                  <p>
-                    <Accordion>
-                      <Panel header="Collapsible Group Item #1" eventKey="1">
-                        <CommentList ids={this.getCommentsIds(item.comments)} />
-                      </Panel>
-                    </Accordion>
+        <div className='newsfeed'>
+          <div className="row" key={`item_rec_${item.id}`}>
+            <div className='column'>
+              <img className='avatar' src={item.author.avatar}></img><p className='author-name'>{item.author.display_name}</p>
+              <p className='votes'>
+                <img src='/img/up.svg'></img>{item.upvotes}
+                  <img src='img/down.svg'></img>{item.downvotes}
                   </p>
-                </td>
-              </td>
-              <td class='body-news'>
-                <p className='news-subject'>Subject:<strong>{item.subject}</strong> </p>
-                <p className='news-body' dangerouslySetInnerHTML={{__html: item.body}}></p>
-                <p className='date'><img src='/img/loc.svg'></img>{item.author.nearest_area.name}   <img src='img/cal.svg'></img>{new Date(item.posted_at).toUTCString()}</p>
-              </td>
-              <td className='place'></td>
-            </tr>
-
+                </div>
+                <div className='column column-80 column-offset-0 body-news'>
+                  <p className='news-subject'>Subject: <strong>{item.subject}</strong> </p>
+                  <p className='news-body' dangerouslySetInnerHTML={{__html: item.body}}></p>
+                  <p className='date'><img src='/img/loc.svg'></img>{item.author.nearest_area.name}   <img src='img/cal.svg'></img>{new Date(item.posted_at).toUTCString()}</p>
+                </div>
+                <div className='column place'></div>
+              </div>
+              <div className='comments'>
+                <CommentList ids={this.getCommentsIds(item.comments)} />
+              </div>
+            </div>
           )
           rows.push(news)
         })
@@ -62,16 +58,7 @@ class Newsfeed extends React.Component {
           <div id='comment'>
             <div className='column'>
               <h3>Newsfeed</h3>
-              <table>
-                <thead>
-                  <tr>
-                    Latest stories
-                  </tr>
-                </thead>
-                <tbody>
-                  {this.feedList(newsfeedItems)}
-                </tbody>
-              </table>
+              {this.feedList(newsfeedItems)}
             </div>
           </div>
         )

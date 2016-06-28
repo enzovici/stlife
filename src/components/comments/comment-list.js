@@ -15,14 +15,13 @@ class CommentList extends React.Component {
     let ids = []
     comments.forEach((item) => {
       let comment= (
-        <tr key={`item_rec_${Math.floor((Math.random() * 10000) + 1)}`}>
-          <td><img src={item.author.avatar}></img> </td>
-          <td>
-            <p><strong>{item.author.display_name}</strong></p>
-            <p className='comment-body' dangerouslySetInnerHTML={{__html: item.body}}></p>
-            <p>{new Date(item.posted_at).toUTCString()}</p>
-          </td>
-        </tr>
+        <div className='row' key={`item_rec_${Math.floor((Math.random() * 10000) + 1)}`}>
+          <div className='column'>
+            <p className='comment-author-name'><img src={item.author.avatar}></img><strong>{item.author.display_name}</strong></p>
+            <p className='column column-80 column-offset-0 comment-body' dangerouslySetInnerHTML={{__html: item.body}}></p>
+            <p className='comment-date'><img src='/img/cal.svg'></img>{new Date(item.posted_at).toUTCString()}</p>
+          </div>
+        </div>
       )
       rows.push(comment)
     })
@@ -31,8 +30,7 @@ class CommentList extends React.Component {
 
   render () {
     return (
-      <td> {this.commentList(this.props.ids)} </td>
-
+      <div className='column'> {this.commentList(this.props.ids)} </div>
     )
   }
 }
