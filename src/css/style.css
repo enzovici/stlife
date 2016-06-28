@@ -20,7 +20,6 @@
   margin: 40px auto;
 }
 
-
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -39,9 +38,7 @@ table th:first-child, table td:first-child {
   float: right;
 }
 
-
 /* newsfeed */
-
 
 .votes img {
   height: 30px;
@@ -55,18 +52,40 @@ table th:first-child, table td:first-child {
   margin: 5px;
 }
 
+.place {
+  color: lightgrey;
+}
+
 .avatar{
   border-radius: 50%;
   margin: 20px;
 }
 
-.date {
-  font-size: 5px;
+.date img {
+  height: 15px;
+  font-size: 4px;
   margin: 5px;
+}
+
+.date{
+  color: lightgrey;
 }
 
 .body-news{
   margin-top: 5px;
+}
+
+.author-name{
+  text-align: center;
+  font-weight: bolder;
+}
+
+.news-subject {
+  ma
+}
+
+.news-body{
+
 }
 
 /*#news {

@@ -8,7 +8,7 @@ export default class App extends React.Component {
       <div>
         <div class="container">
           <h1 id="logo" >
-            <a href="https://www.streetlife.com/">Streetlife</a>
+            <strong>Street</strong>life
           </h1>
           <div class="row">
             <div class="column">  <Header /> </div>
