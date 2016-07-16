@@ -1,4 +1,4 @@
-# Tallysticks DAPP
+# 
 
 ## Get Started
 1. **Install dependencies**. `npm install`
